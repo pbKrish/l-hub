@@ -2,7 +2,7 @@
   "name": "l-hub",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/pbKrish/l-hub",
+  "homepage": " https://pbkrish.github.io/l-hub/",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "react": "^16.0.0",
