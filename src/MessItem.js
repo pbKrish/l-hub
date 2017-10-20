@@ -1,10 +1,10 @@
 import React from 'react';
-import './Home.css'
+
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 var createReactClass = require('create-react-class');
-const Home = createReactClass({
+const MessItem = createReactClass({
 getInitialState(){
         return {
             open: false
@@ -30,20 +30,13 @@ getInitialState(){
           onRequestChange={(open) => this.setState({open})}
         >
 
-          <MenuItem href="/l-hub/slr" >Simple Linear Regreesion</MenuItem>
-          <MenuItem href="/l-hub/mlr" >Multiple Linear Regreesion</MenuItem>
-          <MenuItem href="/l-hub/polynomial" >Polynomial Regreesion</MenuItem>
-          <MenuItem href="/l-hub/svm" >Support Vector Regreesion</MenuItem>
-          <MenuItem href="/l-hub/dt" >Decission Tree Regreesion</MenuItem>
-          <MenuItem href="/l-hub/rf" >Random Forest Regreesion</MenuItem>
-                    
-
-
+          <MenuItem href="/l-hub/messitem" >Menu Item</MenuItem>
+          <MenuItem href="/l-hub/messitem">Menu Item 2</MenuItem>
         </Drawer>
-
+<h4>Message Item Component is here!!</h4>
       </div>
     );
   }
 })
 
-export default Home ;
+export default MessItem ;

@@ -1,10 +1,9 @@
 import React from 'react';
-import './Home.css'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 var createReactClass = require('create-react-class');
-const Home = createReactClass({
+const Polynomial = createReactClass({
 getInitialState(){
         return {
             open: false
@@ -40,10 +39,10 @@ getInitialState(){
 
 
         </Drawer>
-
+<h3>Polynomial Regression</h3>
       </div>
     );
   }
 })
 
-export default Home ;
+export default Polynomial ;
