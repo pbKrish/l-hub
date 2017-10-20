@@ -1,28 +1,60 @@
+import ReactDOM from 'react-dom';
+import KNN from'./Classification/KNN';
+import LR from'./Classification/LR';
+
 import React from 'react';
+
+import './Home.css'
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
 var createReactClass = require('create-react-class');
-const About = createReactClass({
+
+const Home = createReactClass({
 getInitialState(){
         return {
-            numClicks: 0
+            open: false
         }
     },
-    click() {
-        this.setState({
-        	numClicks: this.state.numClicks + 1
-        });
-    console.log(this.state.numClicks)
-    },
 
 
-render(){
-	return (
-<div><h2>About</h2>
+ handleToggle() { this.setState({open: !this.state.open});},
 
-<button onClick={this.click}>Open Menu</button>
-{this.state.numClicks}
-</div>
-);
-}
+  handleClose() {this.setState({open: false});},
+  renderKNN() { 
+   ReactDOM.render(<KNN />, document.getElementById('content'));
+   this.setState({open: false});
+  },
+renderLR() { 
+   ReactDOM.render(<LR />, document.getElementById('content'));
+   this.setState({open: false});
+  },
+
+ render() {
+    return (
+      <div>
+
+        <RaisedButton
+          label="Open Drawer"
+          onClick={this.handleToggle}
+        />
+        <Drawer
+          docked={false}
+          width={270}
+          open={this.state.open}
+          onRequestChange={(open) => this.setState({open})}
+        >
+
+          <MenuItem onClick={this.renderKNN} >K-Nearest Neighbours</MenuItem>
+          <MenuItem onClick={this.renderLR} >Logistic Regression Classification</MenuItem>
+                    
+
+
+        </Drawer>
+<div id="content">About</div>
+      </div>
+    );
+  }
 })
 
-export default About ;
+export default Home ;
