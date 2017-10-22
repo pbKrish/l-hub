@@ -15,6 +15,10 @@ import About from "./About.js";
 import AppBar from 'material-ui/AppBar';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MainMenu from './MainMenu.js';
+import {Dropdown} from 'react-materialize/lib/Dropdown';
+import Button from 'react-materialize/lib/Button';
+import NavItem from 'react-materialize/lib/NavItem';
+import {ButtonGroup, DropdownButton , MenuItem} from 'react-bootstrap/lib';
 const styles = {
   customWidth: {
     width: 175,
@@ -31,7 +35,6 @@ getInitialState(){
         }
     },
 
-
   
 renderMenu(){
 if(!this.state.open){
@@ -46,23 +49,24 @@ else{
   render() {
     return (
       <div className="App">
-        <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    
-      <button onClick={this.renderMenu} type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/l-hub">Learn A.I</a>
+        <nav className="navbar navbar-default">
+  <div className="container-fluid">
+    <div className="navbar-header">
+      
+      <div className="navbar-toggle " >
+
+    <DropdownButton title="Dropdown" id="bg-nested-dropdown">
+      <MenuItem eventKey="1" href="/l-hub/home">Regression</MenuItem>
+      <MenuItem eventKey="2" href="/l-hub/about">Classification</MenuItem>
+    </DropdownButton>
+</div>
+      <a className="navbar-brand" href="/l-hub">Learn A.I</a>
  
     </div>
      <div id="menu"></div>
 
-    <div class="collapse navbar-collapse" id="main-menu">
-      <ul class="nav navbar-nav navbar-right">
+    <div className="collapse navbar-collapse" id="main-menu">
+      <ul className="nav navbar-nav navbar-right">
         <li><a href="/l-hub/home">Regression</a></li>
        <li><a href="/l-hub/about">Classification</a></li>
        <li><a href="/l-hub/about">Clustering</a></li>
@@ -88,7 +92,10 @@ else{
 </div>
 </Router>
 </MuiThemeProvider>
-      </div>
+
+
+
+</div>
 
     );
   }

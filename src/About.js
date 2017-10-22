@@ -8,6 +8,9 @@ import './Home.css'
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import Navbar from 'react-materialize/lib/Navbar'; 
+import NavItem from 'react-materialize/lib/NavItem'; 
+
 var createReactClass = require('create-react-class');
 
 const Home = createReactClass({
@@ -52,8 +55,8 @@ renderLR() {
 
         </Drawer>
 <div id="content">About</div>
-      </div>
-    );
+         </div>
+);
   }
 })
 
