@@ -96,3 +96,10 @@ div#topbar > #sections_panel > div{
   color:#FC0;
 }
 
+
+.mobnav{
+  margin-top : 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  padding-top: 0px
+}
